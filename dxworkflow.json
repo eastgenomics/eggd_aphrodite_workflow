@@ -1,0 +1,130 @@
+{
+  "name": "aphrodite_workflow_v1.1.0",
+  "title": "aphrodite_workflow_v1.1.0",
+  "stages": [
+    {
+      "id": "stage-Fz8z6GQ433GgQf470by0g4VX",
+      "executable": "applet-FvyXygj433GbKPPY0QY8ZKQG",
+      "folder": "multi_fastqc_v1.1.0"
+    },
+    {
+      "id": "stage-Fz8z6K8433Gzyv2Z82Fq7Bf9",
+      "executable": "app-sentieon-dnaseq/2.0.3",
+      "folder": "sentieon_dnaseq",
+      "input": {
+        "genome_fastagz": {
+          "$dnanexus_link": {
+            "project": "project-F3zxk7Q4F30Xp8fG69K1Vppj",
+            "id": "file-F4040pj4F30jQgyvFq1BzvgP"
+          }
+        },
+        "genomebwaindex_targz": {
+          "$dnanexus_link": {
+            "project": "project-F3zxk7Q4F30Xp8fG69K1Vppj",
+            "id": "file-F3zyFXj4F30Z3FVFFpg4Pgqk"
+          }
+        },
+        "targets_bed": [
+          {
+            "$dnanexus_link": "file-FvpYKx04KB7f191XKgyzP5ZF"
+          }
+        ],
+        "mark_or_remove_duplicate": "none",
+        "haplotyper_algo_options": "--call_conf 10 --emit_conf 10 --gq_bands 1-100 --emit_mode all",
+        "gvcftyper_algo_options": "--call_conf 10 --emit_conf 10 --emit_mode all",
+        "gatk_resource_bundle": {
+          "$dnanexus_link": {
+            "project": "project-F3zqGV04fXX5j7566869fjFq",
+            "id": "file-F3zvKp84fXX8qJx43zZXP395"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-G5jf6fj433GZYjP4PQy344y2",
+      "executable": "app-eggd_nimagen_to_gel_vcf/1.6.0",
+      "folder": "eggd_nimagen_to_gel_vcf_v1.6.0",
+      "input": {
+        "input_vcf_index": {
+          "$dnanexus_link": {
+            "outputField": "variants_vcftbi",
+            "stage": "stage-Fz8z6K8433Gzyv2Z82Fq7Bf9"
+          }
+        },
+        "header_txt": {
+          "$dnanexus_link": {
+            "project": "project-G52602j4yPzK2BxF4gzZx6Y5",
+            "id": "file-G5K2Gf04yPzP72KP7yK9bQ4y"
+          }
+        },
+        "input_vcf": {
+          "$dnanexus_link": {
+            "outputField": "variants_vcf",
+            "stage": "stage-Fz8z6K8433Gzyv2Z82Fq7Bf9"
+          }
+        },
+        "fasta_file": {
+          "$dnanexus_link": "file-G5xBZvj4yPz1xZfqKKjkG8xQ"
+        }
+      }
+    },
+    {
+      "id": "stage-Fz8z6X8433Gp76VZ870p0Y3j",
+      "executable": "applet-Fk5z0V84yBGZ5P7q3gFgFB64",
+      "folder": "samtools_flagstat_v1.0.0",
+      "input": {
+        "input_bam_index": {
+          "$dnanexus_link": {
+            "outputField": "mappings_bam_bai",
+            "stage": "stage-Fz8z6K8433Gzyv2Z82Fq7Bf9"
+          }
+        },
+        "input_bam": {
+          "$dnanexus_link": {
+            "outputField": "mappings_bam",
+            "stage": "stage-Fz8z6K8433Gzyv2Z82Fq7Bf9"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-Fz8z6Z8433Gk7gJV0fB8qv17",
+      "executable": "applet-Fp69k884qBzVfbvP812F92gG",
+      "folder": "eggd_picard_qc_v1.0.0",
+      "input": {
+        "sorted_bam": {
+          "$dnanexus_link": {
+            "outputField": "mappings_bam",
+            "stage": "stage-Fz8z6K8433Gzyv2Z82Fq7Bf9"
+          }
+        },
+        "run_CollectTargetedPcrMetrics": true,
+        "bedfile": {
+          "$dnanexus_link": "file-Fy7zZg84KB7qqyPgJ1j950Kv"
+        },
+        "fasta_index": {
+          "$dnanexus_link": {
+            "project": "project-Fq1yVVj41zg7Gkz38K60KfxP",
+            "id": "file-Fy07P684ZKv2FYF29B022J8g"
+          }
+        }
+      }
+    },
+    {
+      "id": "stage-Fz8z6g8433GgQf470by0g4X3",
+      "executable": "applet-FpG4zY8433GbJ9Xj5vBvzBFp",
+      "folder": "eggd_vcf_qc_v1.0.1",
+      "input": {
+        "vcf_file": {
+          "$dnanexus_link": {
+            "outputField": "variants_vcf",
+            "stage": "stage-Fz8z6K8433Gzyv2Z82Fq7Bf9"
+          }
+        },
+        "bed_file": {
+          "$dnanexus_link": "file-FvpYKx04KB7f191XKgyzP5ZF"
+        }
+      }
+    }
+  ]
+}
