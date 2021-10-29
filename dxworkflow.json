@@ -1,4 +1,6 @@
 {
+  "name": "aphrodite_workflow_v1.1.0",
+  "title": "aphrodite_workflow_v1.1.0",
   "name": "aphrodite_workflow_v1.0.0",
   "title": "aphrodite_workflow_v1.0.0",
   "stages": [
@@ -41,6 +43,34 @@
       }
     },
     {
+      "id": "stage-G5jf6fj433GZYjP4PQy344y2",
+      "executable": "app-eggd_nimagen_to_gel_vcf/1.6.0",
+      "folder": "eggd_nimagen_to_gel_vcf_v1.6.0",
+      "input": {
+        "input_vcf_index": {
+          "$dnanexus_link": {
+            "outputField": "variants_vcftbi",
+            "stage": "stage-Fz8z6K8433Gzyv2Z82Fq7Bf9"
+          }
+        },
+        "header_txt": {
+          "$dnanexus_link": {
+            "project": "project-G52602j4yPzK2BxF4gzZx6Y5",
+            "id": "file-G5K2Gf04yPzP72KP7yK9bQ4y"
+          }
+        },
+        "input_vcf": {
+          "$dnanexus_link": {
+            "outputField": "variants_vcf",
+            "stage": "stage-Fz8z6K8433Gzyv2Z82Fq7Bf9"
+          }
+        },
+        "fasta_file": {
+          "$dnanexus_link": "file-G5xBZvj4yPz1xZfqKKjkG8xQ"
+        }
+      }
+    },
+    {
       "id": "stage-Fz8z6X8433Gp76VZ870p0Y3j",
       "executable": "applet-Fk5z0V84yBGZ5P7q3gFgFB64",
       "folder": "samtools_flagstat_v1.0.0",
@@ -75,6 +105,10 @@
           "$dnanexus_link": "file-Fy7zZg84KB7qqyPgJ1j950Kv"
         },
         "fasta_index": {
+          "$dnanexus_link": {
+            "project": "project-Fq1yVVj41zg7Gkz38K60KfxP",
+            "id": "file-Fy07P684ZKv2FYF29B022J8g"
+          }
           "$dnanexus_link": "file-Fy07P684ZKv2FYF29B022J8g"
         }
       }
