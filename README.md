@@ -1,9 +1,12 @@
 # eggd_aphrodite_workflow
+workflow definition for Aphrodite
+
 
 -------
 ## Current Version: 1.1.0
 
 ## Release Notes:
+
 Workflow built with GRCh38
 
 ## What apps are used in this workflow?
@@ -20,4 +23,3 @@ Workflow built with GRCh38
 
 
 #### This workflow was made by EMEE GLH
-
