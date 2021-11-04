@@ -3,7 +3,7 @@ workflow definition for Aphrodite
 
 
 -------
-## Current Version: 1.1.0
+## Current Version: 1.2.0
 
 ## Release Notes:
 
