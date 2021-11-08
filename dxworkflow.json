@@ -1,6 +1,6 @@
 {
-  "name": "aphrodite_workflow_v1.2.0",
-  "title": "aphrodite_workflow_v1.2.0",
+  "name": "aphrodite_workflow_v1.3.0",
+  "title": "aphrodite_workflow_v1.3.0",
   "stages": [
     {
       "id": "stage-Fz8z6GQ433GgQf470by0g4VX",
@@ -100,7 +100,7 @@
         },
         "run_CollectTargetedPcrMetrics": true,
         "bedfile": {
-          "$dnanexus_link": "file-G61qVY04KB7yJ88FPgKzFPYb"
+          "$dnanexus_link": "file-G62Z1Fj4KB7VQ1Qz814FVzB1"
         },
         "fasta_index": {
           "$dnanexus_link": {
