@@ -14,7 +14,7 @@ Workflow built with GRCh38
 |  App 	| Version  	|
 |---	|---	|
 |multifastqc        |1.1.0|
-|sention-dnaseq     |2.0.3|
+|sentieon-dnaseq     |2.0.3|
 |eggd_nimagen_to_gel_vcf |1.7.0|
 |vcf_qc 	        |1.0.1|  	
 |samtools_flagstat  |1.0.0|
